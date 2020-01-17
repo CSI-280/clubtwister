@@ -1,5 +1,4 @@
 # clubtwister
-
 This is a project created by team Club Twister for our Open Source Software Development class, CSI-280.
 
 The purpose of our site is to __________, and it's three main features are:
