@@ -3,3 +3,57 @@ body{
 	background-color: white;
 }
 
+table{
+	text-align: center;
+	margin: auto;
+	height: 100%;
+	width: 100%;
+	border-collapse: collapse;	
+}
+
+.homeBackground {
+	background-image: url("https://images.pexels.com/photos/374825/pexels-photo-374825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+	background-size: cover;
+}
+
+
+.title{
+	font-size: xx-large;
+	text-align: center;
+	background-color: #333A56;
+	color: white;
+	width: 110%;
+}
+	
+.nav-head{
+	text-align: right;
+	padding-left: 10px;
+}
+
+.nav{
+	font-size: large;
+	background-color: #52658F;
+}
+
+.nav-links a{
+	text-decoration: none;
+	color: white;
+}
+
+.nav-links{
+	text-align: right;
+	padding-right: 10px;
+}
+
+.title{
+	font-size: xx-large;
+	text-align: center;
+	background-color: #333A56;
+	color: white;
+	width: 110%;
+}
+
+.title a{
+	text-decoration: none;
+	color: white;
+}
