@@ -3,9 +3,9 @@ This is a project created by team Club Twister for our Open Source Software Deve
 
 The purpose of our site is to advertise animals like merchandise under the guise of getting them adopted
 Its three main features are:
-1. Display a list of pets available for adoption
-2. Create a profile
-3. Be able to add certain pets to a pet wishlist
+1. Display a list of pets available for adoption depending upon species
+2. Be able to search for animals that are a certain color or other factors
+3. Be able to display the information about one particular pet
 
 Instructions for how to set up and run our website on a local machine are as follows:
 1. Have a web browser such as Google Chrome installed on your device
