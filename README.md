@@ -1,5 +1,6 @@
-# clubtwister
+# Club Twister
 This is a project created by team Club Twister for our Open Source Software Development class, CSI-280.
+Members: Jared Remsberg, 
 
 The purpose of our site is to advertise animals like merchandise under the guise of getting them adopted
 Its three main features are:
