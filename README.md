@@ -1,6 +1,8 @@
 # clubtwister
 This is a project created by team Club Twister for our Open Source Software Development class, CSI-280.
 
+This is the third time I have attempted to add something to the readme.
+
 The purpose of our site is to advertise animals like merchandise under the guise of getting them adopted
 Its three main features are:
 1. Display a list of pets available for adoption depending upon species
