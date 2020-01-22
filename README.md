@@ -1,6 +1,8 @@
 # Club Twister
 This is a project created by team Club Twister for our Open Source Software Development class, CSI-280.
 
+This is the third time I have attempted to add something to the readme.
+
 Our team members are Lenora Batcher, Jacob Buzzell, Jasmine Carr, Jared Remsberg, and Steven Pershyn.
 
 The purpose of our site is to advertise animals like merchandise under the guise of getting them adopted
