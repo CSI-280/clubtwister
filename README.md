@@ -17,4 +17,9 @@ Instructions for how to set up and run our website on a local machine are as fol
 3. Locate the file labeled "home" on your local computer and open it with a web broswer
 4. This should get you to the website and allow access to all features of the site
 
-This site uses the Petfinder API to provide a list of animals with helpful attributes for searching and displaying them back to the user.  By using the Petfinder API, we will be able to obtain pet objects with ID that can be added to a wishlist and retrieved at a later time.
+This site uses the petfinder API to provide a list of animals with helpful attributes for searching and displaying them back to the user.  By using the petfinder API, we will be able to obtain pet objects with ID that can be added to a wishlist and retrieved at a later time.
+
+Contributors:
+
+	Steven Pershyn
+
