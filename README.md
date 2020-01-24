@@ -19,9 +19,9 @@ The species that the user can search for include dogs, cats, rabbits, and more. 
 This site uses the petfinder API to provide a list of animals with helpful attributes for searching and displaying them back to the user.  By using the petfinder API, we will be able to obtain pet objects with ID that can be added to a wishlist and retrieved at a later time.
 
 **Contributors:**
- -[Steven Pershyn](https://github.com/steven-pershyn)
- -[Lenora Batcher](https://github.com/lenora4321)
- -[Jacob Buzzell](https://github.com/jbuzzell)
- -[Jasmine Carr](https://github.com/jlc0906)
- -[Jared Remsberg](https://github.com/Gumbachi)
+  -[Steven Pershyn](https://github.com/steven-pershyn)
+  -[Lenora Batcher](https://github.com/lenora4321)
+  -[Jacob Buzzell](https://github.com/jbuzzell)
+  -[Jasmine Carr](https://github.com/jlc0906)
+  -[Jared Remsberg](https://github.com/Gumbachi)
 
