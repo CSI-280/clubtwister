@@ -10,8 +10,11 @@ function getType(animalType){
 
 		for (var i = 0; i < numAnimals; i++){
 			var currentSlot = document.getElementById(i);
-			currentSlot.innerHTML = animals[i].name;
-			currentSlot.innerHTML += ", " + animals[i].breeds.primary;
+			currentSlot.innerHTML = "<td>" + animals[i].name + "</td>";
+			currentSlot.innerHTML += "<td>" + animals[i].breeds.primary + "</td>"
+			currentSlot.innerHTML += "<td>" + animals[i].age + "</td>";
+			currentSlot.innerHTML += "<td>" + animals[i].contact.address.city + ", " + animals[i].contact.address.state + "</td>"
+			
 		}
 		
 		console.log(animals[0]);

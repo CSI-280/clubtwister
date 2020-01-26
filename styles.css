@@ -11,6 +11,23 @@ table{
 	border-collapse: collapse;	
 }
 
+.display-pets{
+	text-align: left;
+	margin: auto;
+	height: 100%;
+	width: 100%;
+	border-collapse: none;
+}
+
+.display-pets td, th{
+	padding: 2px;
+	
+}
+
+.off-row{
+	background-color: whitesmoke;
+}
+
 .homeBackground {
 	background-image: url("https://images.pexels.com/photos/374825/pexels-photo-374825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
 	background-size: cover;
