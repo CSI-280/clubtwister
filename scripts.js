@@ -31,13 +31,30 @@ function getType(animalType) {
 
 }
 
-// function showInfo(petID, row){
-// 	var profile = document.getElementsByClassName(`pf ${row}`);
-// 	pf.animal.search({id: petID}).then(
-// 		function (response){
-// 			let pet = response.data.animals[0];
-// 			console.log(pet)
-// 			profile[0].style.display = 'table-row'
-// 		}
-// 	)
-// }
+function showInfo(petID, row){
+	console.log(petID);
+	let profiles = document.getElementsByClassName('pf');
+	var currentSlot = profiles[row];
+	if (currentSlot.style.display=='none') {
+		pf.animal.show(petID).then(
+			function (response){
+				console.log(response.data.animal);
+				var pet = response.data.animal;
+				if (pet.photos.length > 0)
+					var image = pet.photos[0].small;
+				else
+					var image = "";
+				currentSlot.innerHTML = `<td> <img alt='no image found' style="margin:0; padding:0;" src="${image}"></td>`
+				currentSlot.innerHTML += `<td colspan='3'>Meet ${pet.name}<br>${pet.description}!<br>
+									      Breed: ${pet.breeds.primary} <br>
+									      Gender: ${pet.gender} <br>
+										  Age: ${pet.age}</td>`;
+			}
+		);
+
+		currentSlot.style.display = 'table-row';
+	} else {
+		currentSlot.style.display = 'none';
+
+	}
+}

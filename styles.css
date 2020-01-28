@@ -75,3 +75,17 @@ th {
 	text-decoration: none;
 	color: white;
 }
+
+#pfbtn:hover{
+	cursor: pointer;
+}
+
+#pfbtn{
+	border: none;
+	background: none;
+	font-weight: bold;
+}
+
+button:active, button:focus{
+	outline: none;
+}
