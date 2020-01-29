@@ -1,17 +1,17 @@
-body{
+body {
 	font-family: verdana;
 	background-color: white;
 }
 
-table{
+table {
 	text-align: center;
 	margin: auto;
 	height: 100%;
 	width: 100%;
-	border-collapse: collapse;	
+	border-collapse: collapse;
 }
 
-.display-pets{
+.display-pets {
 	text-align: left;
 	margin: auto;
 	height: 100%;
@@ -19,12 +19,13 @@ table{
 	border-collapse: none;
 }
 
-.display-pets td, th{
+.display-pets td,
+th {
 	padding: 2px;
-	
+
 }
 
-.off-row{
+.off-row {
 	background-color: whitesmoke;
 }
 
@@ -34,35 +35,35 @@ table{
 }
 
 
-.title{
+.title {
 	font-size: xx-large;
 	text-align: center;
 	background-color: #333A56;
 	color: white;
 	width: 110%;
 }
-	
-.nav-head{
+
+.nav-head {
 	text-align: right;
 	padding-left: 10px;
 }
 
-.nav{
+.nav {
 	font-size: large;
 	background-color: #52658F;
 }
 
-.nav-links a{
+.nav-links a {
 	text-decoration: none;
 	color: white;
 }
 
-.nav-links{
+.nav-links {
 	text-align: right;
 	padding-right: 10px;
 }
 
-.title{
+.title {
 	font-size: xx-large;
 	text-align: center;
 	background-color: #333A56;
@@ -70,7 +71,21 @@ table{
 	width: 110%;
 }
 
-.title a{
+.title a {
 	text-decoration: none;
 	color: white;
+}
+
+#pfbtn:hover{
+	cursor: pointer;
+}
+
+#pfbtn{
+	border: none;
+	background: none;
+	font-weight: bold;
+}
+
+button:active, button:focus{
+	outline: none;
 }
