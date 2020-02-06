@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Club Twister website</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="scripts.js"></script>
+</head>
+
+<body class="" onload="">
+	<table>
+		<tr>
+			<th class="title" colspan="3">
+				<a href="Home.html">Club Twister Pets</a>
+			</th>
+		</tr>
+		<tr class="nav">
+			<th class="nav-links">
+			<a href="Dogs.html">Dogs</a>
+			<a href="Cats.html">Cats</a> 
+			<a href="Rabbits.html">Rabbits</a>
+			<a href="Search.html">Search</a> 
+			</th>
+		</tr>
+	</table>
+	
+	<table class="search">
+		<tr>
+			<th>General</th>
+			<th colspan="2">Appearance</th>
+			<th>Behavior</th>
+		</tr>
+		<tr>
+			<td>
+				<br>Animal type<br>
+				<input id="type" type="text" name="type"><br>
+				
+				<br>Breed<span class="tooltip">(?)<br><span id="tooltiptext" class="tooltiptext">Potential breeds: loading</span></span>
+				<input type="text" name="breed"><br>
+				<br>Status<br>
+				<input type="radio" name="status" value="adoptable"> Adoptable<br>
+				<input type="radio" name="status" value="adopted"> Adopted<br>
+				<input type="radio" name="status" value="found"> Found<br>
+				<br>Sort by<br>
+				<input type="radio" name="sort" value="recent"> Newest<br>
+				<input type="radio" name="sort" value="-recent"> Oldest<br>
+			</td>
+			<td>
+				<br>Age<br>
+				<input type="checkbox" name="age" value="baby"> Baby<br>
+				<input type="checkbox" name="age" value="young"> Young<br>
+				<input type="checkbox" name="age" value="adult"> Adult<br>
+				<input type="checkbox" name="age" value="senior"> Senior<br>
+				<br>Gender<br>
+				<input type="checkbox" name="gender" value="male"> Male<br>
+				<input type="checkbox" name="gender" value="female"> Female<br>
+				<input type="checkbox" name="gender" value="unknown"> Unknown<br>
+			</td>
+			<td>
+				<br>Size<br>
+				<input type="checkbox" name="size" value="small"> Small<br>
+				<input type="checkbox" name="size" value="medium"> Medium<br>
+				<input type="checkbox" name="size" value="large"> Large<br>
+				<input type="checkbox" name="size" value="xlarge"> X-large<br>
+				<br>Hair<br>
+				<input type="checkbox" name="hair" value="short"> Short<br>
+				<input type="checkbox" name="hair" value="medium"> Medium<br>
+				<input type="checkbox" name="hair" value="long"> Long<br>
+				<input type="checkbox" name="hair" value="wire"> Wire<br>
+				<input type="checkbox" name="hair" value="hairless"> Hairless<br>
+				<input type="checkbox" name="hair" value="curly"> Curly<br>
+			</td>
+			<td>
+				<br>Good with kids<br>
+				<input type="radio" name="good_with_kids" value="true"> Yes<br>
+				<input type="radio" name="good_with_kids" value="false"> No<br>
+				<br>Good with cats<br>
+				<input type="radio" name="good_with_cats" value="true"> Yes<br>
+				<input type="radio" name="good_with_cats" value="false"> No<br>
+				<br>Good with dogs<br>
+				<input type="radio" name="good_with_cats" value="true"> Yes<br>
+				<input type="radio" name="good_with_dogs" value="false"> No<br>
+			</td>
+		</tr>		
+	<table>
+	
+	<br>
+	<button onclick="search()">Submit</button>
+
+	<br><br>
+	<table class="display-pets">
+		<tr id="hidden" style="visibility: hidden">
+			<th>Name</th>
+			<th>Breed</th>
+			<th>Age</th>
+			<th>Location</th>
+		</tr>
+
+		<tr id="0" class="off-row"></tr>
+		<tr style="display: none" class="pf 0"></tr>
+
+		<tr id="1"></tr>
+		<tr style="display: none" class="pf 1"></tr>
+
+		<tr id="2" class="off-row"></tr>
+		<tr style="display: none" class="pf 2"></tr>
+
+		<tr id="3"></tr>
+		<tr style="display: none" class="pf 3"></tr>
+
+		<tr id="4" class="off-row"></tr>
+		<tr style="display: none" class="pf 4"></tr>
+
+		<tr id="5"></tr>
+		<tr style="display: none" class="pf 5"></tr>
+
+		<tr id="6" class="off-row"></tr>
+		<tr style="display: none" class="pf 6"></tr>
+
+		<tr id="7"></tr>
+		<tr style="display: none" class="pf 7"></tr>
+
+		<tr id="8" class="off-row"></tr>
+		<tr style="display: none" class="pf 8"></tr>
+
+		<tr id="9"></tr>
+		<tr style="display: none" class="pf 9"></tr>
+
+		<tr id="10" class="off-row"></tr>
+		<tr style="display: none" class="pf 10"></tr>
+
+		<tr id="11"></tr>
+		<tr style="display: none" class="pf 11"></tr>
+
+		<tr id="12" class="off-row"></tr>
+		<tr style="display: none" class="pf 12"></tr>
+
+		<tr id="13"></tr>
+		<tr style="display: none" class="pf 13"></tr>
+
+		<tr id="14" class="off-row"></tr>
+		<tr style="display: none" class="pf 14"></tr>
+
+		<tr id="15"></tr>
+		<tr style="display: none" class="pf 15"></tr>
+
+		<tr id="16" class="off-row"></tr>
+		<tr style="display: none" class="pf 16"></tr>
+
+		<tr id="17"></tr>
+		<tr style="display: none" class="pf 17"></tr>
+
+		<tr id="18" class="off-row"></tr>
+		<tr style="display: none" class="pf 18"></tr>
+
+		<tr id="19"></tr>
+		<tr style="display: none" class="pf 19"></tr>
+
+	</table>
+</body>
+	<script>
+		$( "#type" ).keyup(function(event) {
+			document.getElementById("type").innerHTML = "Potential breeds: loading";
+			getBreeds($("#type").val());
+		});
+	</script>
+
+</html>
