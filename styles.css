@@ -76,6 +76,14 @@ th {
 	color: white;
 }
 
+.search{
+	text-align: left;
+}
+
+.search td{
+	vertical-align: top;
+}
+
 #pfbtn:hover{
 	cursor: pointer;
 }
@@ -88,4 +96,28 @@ th {
 
 button:active, button:focus{
 	outline: none;
+}
+
+/*tool tips
+ *structure credit to 
+ *https://www.w3schools.com/css/css_tooltip.asp
+ */
+.tooltip {
+	font-size: small;
+	color: gray;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
