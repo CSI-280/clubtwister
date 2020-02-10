@@ -44,13 +44,21 @@ table {
 
 .display-pets {
 	text-align: left;
+	margin: 2rem;
+	width: calc(100% - 4rem);
 }
 .display-pets tr{
 	padding: 15px 0;
 	display: table-row;
+	border-bottom: 1px solid #000;
 }
-
-
+.display-pets td{
+	padding: 15px;
+}
+.display-pets th{
+	padding: 15px;
+	border-top: 1px solid #000;
+}
 .off-row {
 	background-color: whitesmoke;
 }
