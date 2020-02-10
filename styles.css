@@ -1,8 +1,39 @@
+@import url("https://use.typekit.net/kbn6kil.css");
 body {
-	font-family: verdana;
+	font-family: poppins, sans-serif;
 	background-color: white;
+	margin: 0;
 }
-
+button{
+	font-family: poppins, sans-serif;
+}
+.header{
+	display: flex;
+	background-color: #333A56;
+}
+.header * a{
+	text-decoration: none;
+	color: #fff;
+}
+.header-left{
+	width: 30%;
+	display: flex;
+	justify-content: center;
+}
+.header-right{
+	width: 70%;
+	display: flex;
+	justify-content: center;
+	background-color: #52658F;
+}
+.header-right *{
+	margin: 0 8.5rem;
+	text-transform: uppercase;
+	align-self: center;
+}
+.header-right a:hover{
+	color: #acacac;
+}
 table {
 	text-align: center;
 	margin: auto;
@@ -13,17 +44,12 @@ table {
 
 .display-pets {
 	text-align: left;
-	margin: auto;
-	height: 100%;
-	width: 100%;
-	border-collapse: none;
+}
+.display-pets tr{
+	padding: 15px 0;
+	display: table-row;
 }
 
-.display-pets td,
-th {
-	padding: 2px;
-
-}
 
 .off-row {
 	background-color: whitesmoke;
@@ -92,6 +118,7 @@ th {
 	border: none;
 	background: none;
 	font-weight: bold;
+	padding: 0 !important;
 }
 
 button:active, button:focus{
