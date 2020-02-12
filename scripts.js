@@ -60,7 +60,8 @@ function showInfo(petID, row){
 }
 
 function search(){
-	
+
+    
 	var rawParametersArr = document.getElementsByTagName("input");
 	var parameters = new Object;
 	for (var i = 0; i < rawParametersArr.length; i++){
@@ -91,7 +92,7 @@ function search(){
 			}
 		}
 	}
-
+    var shoppingCart = new Array();        //This is a shopping cart array that can be declared anywhere
 	pf.animal.search(parameters).then(function (response) { 
 		document.getElementById("hidden").visibility = "visible";
 		var numAnimals = Object.keys(response.data.animals).length;
@@ -102,8 +103,13 @@ function search(){
 			currentSlot.innerHTML += `<td>${animals[i].breeds.primary}</td>`;
 			currentSlot.innerHTML += `<td>${animals[i].age}</td>`;
 			currentSlot.innerHTML += `<td>${animals[i].contact.address.city}, ${animals[i].contact.address.state}</td>`;
-		}
-	});
+        }
+        //This is just a sample way to add to the shopping cart.
+        addToShoppingCart(animals[0].id, shoppingCart);
+        console.log(shoppingCart[0]);
+    });
+
+    
 }
 
 function getBreeds(type){
@@ -123,6 +129,12 @@ function getBreeds(type){
 		// Handle the error
 		breeds += "Error, none found";
 	});
-	setTimeout(() => { document.getElementById("tooltiptext").innerHTML = breeds; }, 2000);
+    setTimeout(() => { document.getElementById("tooltiptext").innerHTML = breeds; }, 2000);
+}
+
+//This function adds a pets id to the shopping cart.
+function addToShoppingCart(petID, shoppingCart){
+    console.log(petID);
+    shoppingCart[shoppingCart.length] = petID;
 }
 
