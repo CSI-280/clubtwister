@@ -7,6 +7,7 @@
 
 	<title>Club Twister website</title>
 
+	<link rel="icon" type="image/ico" src="icon.ico">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -27,8 +28,8 @@
 			<a href="Search.html">Search</a> 
 		</div>
 	</div>
-	
-	<table class="search">
+	<br>
+	<table class="search search-table">
 		<tr>
 			<th>General</th>
 			<th colspan="2">Appearance</th>
@@ -89,9 +90,8 @@
 	<table>
 	
 	<br>
-	<button onclick="search()">Submit</button>
+	<button style="margin-left: 2%;" onclick="search()">Submit</button>
 
-	<br><br>
 	<table class="display-pets">
 		<tr id="hidden" style="visibility: hidden">
 			<th>Name</th>
