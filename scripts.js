@@ -105,8 +105,9 @@ function search(){
 			currentSlot.innerHTML += `<td>${animals[i].contact.address.city}, ${animals[i].contact.address.state}</td>`;
         }
         //This is just a sample way to add to the shopping cart.
-        addToShoppingCart(animals[0].id, shoppingCart);
-        console.log(shoppingCart[0]);
+        for (var j = 0; j < animals.length; j++) {
+            addToShoppingCart(animals[j].id, shoppingCart);
+        }
     });
 
 
