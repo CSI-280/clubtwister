@@ -175,3 +175,8 @@ button:active, button:focus{
 	font-size: 16px;
 	margin-left: 4%;
 }
+
+.recent{
+	margin-left: 2rem;
+	margin-top: 2rem;
+}
