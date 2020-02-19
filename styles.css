@@ -1,44 +1,18 @@
 @import url("https://use.typekit.net/kbn6kil.css");
-body {
+html, body {
 	font-family: poppins, sans-serif;
 	background-color: white;
 	margin: 0;
+	height: 100%;
 }
+
 button{
 	font-family: poppins, sans-serif;
 }
-.header{
-	display: flex;
-	background-color: #333A56;
-}
-.header * a{
-	text-decoration: none;
-	color: #fff;
-}
-.header-left{
-	width: 30%;
-	display: flex;
-	justify-content: center;
-}
-.header-right{
-	width: 70%;
-	display: flex;
-	justify-content: center;
-	background-color: #52658F;
-}
-.header-right *{
-	margin: 0 8.5rem;
-	text-transform: uppercase;
-	align-self: center;
-}
-.header-right a:hover{
-	color: #acacac;
-}
+
+/*table styling*/
 table {
 	text-align: center;
-	margin: auto;
-	height: 100%;
-	width: 100%;
 	border-collapse: collapse;
 }
 
@@ -47,75 +21,77 @@ table {
 	margin: 2rem;
 	width: calc(100% - 4rem);
 }
+
 .display-pets tr{
 	padding: 15px 0;
 	display: table-row;
 	border-bottom: 1px solid #000;
 }
+
 .display-pets td{
 	padding: 15px;
 }
+
 .display-pets th{
 	padding: 15px;
 	border-top: 1px solid #000;
 }
+
 .off-row {
 	background-color: whitesmoke;
 }
 
-.homeBackground {
-	background-image: url("https://images.pexels.com/photos/374825/pexels-photo-374825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-	background-size: cover;
-}
-
-
-.title {
-	font-size: xx-large;
-	text-align: center;
+/*navigation*/
+.header{
+	display: flex;
 	background-color: #333A56;
-	color: white;
-	width: 110%;
 }
 
-.nav-head {
-	text-align: right;
-	padding-left: 10px;
+.header * a{
+	text-decoration: none;
+	color: #fff;
 }
 
-.nav {
-	font-size: large;
+.header-left{
+	display: flex;
+	justify-content: center;
+}
+
+.header-right{
+	margin-right: 0px;
+	display: flex;
+	justify-content: center;
 	background-color: #52658F;
 }
 
-.nav-links a {
-	text-decoration: none;
-	color: white;
+.header-right *{
+	margin: 0 1%;
+	text-transform: uppercase;
+	align-self: center;
 }
 
-.nav-links {
-	text-align: right;
-	padding-right: 10px;
+.header-right a:hover{
+	color: #acacac;
 }
 
-.title {
-	font-size: xx-large;
-	text-align: center;
-	background-color: #333A56;
-	color: white;
-	width: 110%;
+.half-width {
+	width: 50%;
 }
 
-.title a {
-	text-decoration: none;
-	color: white;
-}
 
+/*search page styles*/
 .search{
 	text-align: left;
 }
 
 .search td{
 	vertical-align: top;
+}
+
+.search-table{
+	margin-right: 2%;
+	width: 90%;
+	margin-left: 2%;
 }
 
 #pfbtn:hover{
@@ -132,6 +108,10 @@ table {
 button:active, button:focus{
 	outline: none;
 }
+
+.recent{
+	margin-left: 2rem;
+	margin-top: 2rem;
 
 /*tool tips
  *structure credit to 
@@ -157,26 +137,59 @@ button:active, button:focus{
   visibility: visible;
 }
 
+/*home page styles*/
+.homeBackground {
+	background-image: url("https://images.pexels.com/photos/374825/pexels-photo-374825.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+	background-attachment: fixed;
+	height: 100%;
+	background-size: cover;
+}
+
 .about {
 	margin-left: 2%;
 	margin-right: 20%;
 	color: white;
+	padding: 2%;
+	text-shadow: -1px 0 black, 0 1px black,
+		1px 0 black, 0 -1px black;
 }
 
 .about h1{
-	font-size: 32px;
+	font-size: x-large;
 }
 
 .about h2{
-	font-size: 24px;
+	font-size: large;
 }
 
 .about p {
-	font-size: 16px;
+	font-size: medium;
 	margin-left: 4%;
 }
 
-.recent{
-	margin-left: 2rem;
-	margin-top: 2rem;
+.about a{
+	color: #bac3d7;
+	text-shadow: -.5px 0 #202738, 0 .5px #202738,
+		.5px 0 #202738, 0 -.5px #202738;
+}
+
+/*size-responsive styling*/
+@media screen and (max-width: 600px){
+	.header-right{
+		font-size: small;
+	}
+	
+	.header-left{
+		font-size: small;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.header-right{
+		font-size: x-small;
+	}
+	
+	.header-left{
+		font-size: x-small;
+	}
 }
