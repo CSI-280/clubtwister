@@ -109,6 +109,7 @@ function search(){
         console.log(shoppingCart[0]);
     });
 
+
     
 }
 
@@ -138,3 +139,42 @@ function addToShoppingCart(petID, shoppingCart){
     shoppingCart[shoppingCart.length] = petID;
 }
 
+function getTypeBySort(animalType) {
+	
+	var elem = document.getElementById("sorting");
+	var sortType = ""
+	if (elem.innerText == "Oldest") {
+		elem.innerText = "Newest";
+		sortType = "-recent"
+	}
+	else {
+		elem.innerText = "Oldest";
+		sortType = "recent"
+	}
+	
+	pf.animal.search({
+			type: animalType,
+			sort: sortType
+		})
+			.then(function (response) {
+		
+			var numAnimals = Object.keys(response.data.animals).length;
+			var animals = response.data.animals;
+			
+			for (var i = 0; i < numAnimals; i++) {
+				var currentSlot = document.getElementById(i);
+				currentSlot.innerHTML = `<td><button id='pfbtn' onclick="showInfo(${animals[i].id}, ${i})">${animals[i].name}</button></td>`;
+				currentSlot.innerHTML += `<td>${animals[i].breeds.primary}</td>`;
+				currentSlot.innerHTML += `<td>${animals[i].age}</td>`;
+				currentSlot.innerHTML += `<td>${animals[i].contact.address.city}, ${animals[i].contact.address.state}</td>`;
+			}
+
+			console.log(animals[0]);
+
+
+		})
+		.catch(function (error) {
+			// Handle the error
+		});
+		
+}
