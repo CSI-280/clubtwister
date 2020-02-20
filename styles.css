@@ -77,7 +77,24 @@ table {
 .half-width {
 	width: 50%;
 }
-
+.footer{
+	background-color: rgb(85, 85, 85);
+	padding: 2rem;
+}
+.footer h2{
+	color: #fff;
+	width: 100%;
+	margin-top: 0;
+}
+.footer-sitemap a{
+	padding-right: 10px;
+	color:#fff;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.copyright{
+	margin-top: 20px;
+}
 
 /*search page styles*/
 .search{
