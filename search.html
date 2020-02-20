@@ -19,17 +19,19 @@
 <body class="" onload="">
 	<div class='header'>
 		<div class='half-width header-left'>
-			<a href="Home.html"><h2>Club Twister Pets</h2></a>
+			<a href="Home.html">
+				<h2>Club Twister Pets</h2>
+			</a>
 		</div>
 		<div class="half-width header-right">
 			<a href="Dogs.html">Dogs</a>
-			<a href="Cats.html">Cats</a> 
+			<a href="Cats.html">Cats</a>
 			<a href="Rabbits.html">Rabbits</a>
-			<a href="Search.html">Search</a> 
+			<a href="Search.html">Search</a>
 		</div>
 	</div>
 	<br>
-	<table class="search search-table">
+	<table class="search search-table" id="search-table">
 		<tr>
 			<th>General</th>
 			<th colspan="2">Appearance</th>
@@ -39,8 +41,8 @@
 			<td>
 				<br>Animal type<br>
 				<input id="type" type="text" name="type"><br>
-				
-				<br>Breed<span class="tooltip">(?)<br><span id="tooltiptext" class="tooltiptext">Potential breeds: loading</span></span>
+				<br>Breed<span class="tooltip">(?)<br><span id="tooltiptext" class="tooltiptext">Potential breeds:
+						loading</span></span>
 				<input type="text" name="breed"><br>
 				<br>Status<br>
 				<input type="radio" name="status" value="adoptable"> Adoptable<br>
@@ -86,102 +88,103 @@
 				<input type="radio" name="good_with_cats" value="true"> Yes<br>
 				<input type="radio" name="good_with_dogs" value="false"> No<br>
 			</td>
-		</tr>		
-	<table>
-	
-	<br>
-	<button style="margin-left: 2%;" onclick="search()">Submit</button>
-
-	<table class="display-pets">
-		<tr id="hidden" style="visibility: hidden">
-			<th>Name</th>
-			<th>Breed</th>
-			<th>Age</th>
-			<th>Location</th>
 		</tr>
+		<table>
 
-		<tr id="0" class="off-row"></tr>
-		<tr style="display: none" class="pf 0"></tr>
+			<br>
+			<button style="margin-left: 2%;" onclick="search()" id="submitbtn">Submit</button>
+			<button style="margin-left: 2%; display: none" onclick="showTable()" id="searchbtn">Search</button>
 
-		<tr id="1"></tr>
-		<tr style="display: none" class="pf 1"></tr>
+			<table class="display-pets">
+				<tr id="hidden" style="display: none">
+					<th>Name</th>
+					<th>Breed</th>
+					<th>Age</th>
+					<th>Location</th>
+				</tr>
 
-		<tr id="2" class="off-row"></tr>
-		<tr style="display: none" class="pf 2"></tr>
+				<tr id="0" class="off-row"></tr>
+				<tr style="display: none" class="pf 0"></tr>
 
-		<tr id="3"></tr>
-		<tr style="display: none" class="pf 3"></tr>
+				<tr id="1"></tr>
+				<tr style="display: none" class="pf 1"></tr>
 
-		<tr id="4" class="off-row"></tr>
-		<tr style="display: none" class="pf 4"></tr>
+				<tr id="2" class="off-row"></tr>
+				<tr style="display: none" class="pf 2"></tr>
 
-		<tr id="5"></tr>
-		<tr style="display: none" class="pf 5"></tr>
+				<tr id="3"></tr>
+				<tr style="display: none" class="pf 3"></tr>
 
-		<tr id="6" class="off-row"></tr>
-		<tr style="display: none" class="pf 6"></tr>
+				<tr id="4" class="off-row"></tr>
+				<tr style="display: none" class="pf 4"></tr>
 
-		<tr id="7"></tr>
-		<tr style="display: none" class="pf 7"></tr>
+				<tr id="5"></tr>
+				<tr style="display: none" class="pf 5"></tr>
 
-		<tr id="8" class="off-row"></tr>
-		<tr style="display: none" class="pf 8"></tr>
+				<tr id="6" class="off-row"></tr>
+				<tr style="display: none" class="pf 6"></tr>
 
-		<tr id="9"></tr>
-		<tr style="display: none" class="pf 9"></tr>
+				<tr id="7"></tr>
+				<tr style="display: none" class="pf 7"></tr>
 
-		<tr id="10" class="off-row"></tr>
-		<tr style="display: none" class="pf 10"></tr>
+				<tr id="8" class="off-row"></tr>
+				<tr style="display: none" class="pf 8"></tr>
 
-		<tr id="11"></tr>
-		<tr style="display: none" class="pf 11"></tr>
+				<tr id="9"></tr>
+				<tr style="display: none" class="pf 9"></tr>
 
-		<tr id="12" class="off-row"></tr>
-		<tr style="display: none" class="pf 12"></tr>
+				<tr id="10" class="off-row"></tr>
+				<tr style="display: none" class="pf 10"></tr>
 
-		<tr id="13"></tr>
-		<tr style="display: none" class="pf 13"></tr>
+				<tr id="11"></tr>
+				<tr style="display: none" class="pf 11"></tr>
 
-		<tr id="14" class="off-row"></tr>
-		<tr style="display: none" class="pf 14"></tr>
+				<tr id="12" class="off-row"></tr>
+				<tr style="display: none" class="pf 12"></tr>
 
-		<tr id="15"></tr>
-		<tr style="display: none" class="pf 15"></tr>
+				<tr id="13"></tr>
+				<tr style="display: none" class="pf 13"></tr>
 
-		<tr id="16" class="off-row"></tr>
-		<tr style="display: none" class="pf 16"></tr>
+				<tr id="14" class="off-row"></tr>
+				<tr style="display: none" class="pf 14"></tr>
 
-		<tr id="17"></tr>
-		<tr style="display: none" class="pf 17"></tr>
+				<tr id="15"></tr>
+				<tr style="display: none" class="pf 15"></tr>
 
-		<tr id="18" class="off-row"></tr>
-		<tr style="display: none" class="pf 18"></tr>
+				<tr id="16" class="off-row"></tr>
+				<tr style="display: none" class="pf 16"></tr>
 
-		<tr id="19"></tr>
-		<tr style="display: none" class="pf 19"></tr>
+				<tr id="17"></tr>
+				<tr style="display: none" class="pf 17"></tr>
 
-	</table>
+				<tr id="18" class="off-row"></tr>
+				<tr style="display: none" class="pf 18"></tr>
 
-	<div class="footer">
-		<h2 class="footer-title">
-			Club Twister Pets
-		</h2>
-		<div class="footer-sitemap">
-			<a href="Home.html">Home</a>
-			<a href="Dogs.html">Dogs</a>
-			<a href="Cats.html">Cats</a> 
-			<a href="Rabbits.html">Rabbits</a>
-			<a href="Search.html">Search</a> 
-		</div>
-		<div class="copyright">&copy; Club Twister 2020</div>
-	</div>
+				<tr id="19"></tr>
+				<tr style="display: none" class="pf 19"></tr>
+
+			</table>
+
+			<div class="footer">
+				<h2 class="footer-title">
+					Club Twister Pets
+				</h2>
+				<div class="footer-sitemap">
+					<a href="Home.html">Home</a>
+					<a href="Dogs.html">Dogs</a>
+					<a href="Cats.html">Cats</a>
+					<a href="Rabbits.html">Rabbits</a>
+					<a href="Search.html">Search</a>
+				</div>
+				<div class="copyright">&copy; Club Twister 2020</div>
+			</div>
 
 </body>
-	<script>
-		$( "#type" ).keyup(function(event) {
-			document.getElementById("type").innerHTML = "Potential breeds: loading";
-			getBreeds($("#type").val());
-		});
-	</script>
+<script>
+	$("#type").keyup(function (event) {
+		document.getElementById("type").innerHTML = "Potential breeds: loading";
+		getBreeds($("#type").val());
+	});
+</script>
 
 </html>

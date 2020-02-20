@@ -31,13 +31,13 @@ function getType(animalType) {
 
 }
 
-function showInfo(petID, row){
+function showInfo(petID, row) {
 	console.log(petID);
 	let profiles = document.getElementsByClassName('pf');
 	var currentSlot = profiles[row];
-	if (currentSlot.style.display=='none') {
+	if (currentSlot.style.display == 'none') {
 		pf.animal.show(petID).then(
-			function (response){
+			function (response) {
 				console.log(response.data.animal);
 				var pet = response.data.animal;
 				if (pet.photos.length > 0)
@@ -59,41 +59,37 @@ function showInfo(petID, row){
 	}
 }
 
-function search(){
-
-    
+function search() {
 	var rawParametersArr = document.getElementsByTagName("input");
 	var parameters = new Object;
-	for (var i = 0; i < rawParametersArr.length; i++){
+	for (var i = 0; i < rawParametersArr.length; i++) {
 		currentInput = rawParametersArr[i];
-		if (currentInput.name in parameters){
+		if (currentInput.name in parameters) {
 			continue;
 		}
-		if (currentInput.type == "checkbox"){
+		if (currentInput.type == "checkbox") {
 			var checkboxGroup = document.getElementsByName(currentInput.name);
 			checkedArr = [];
-			for (var j = 0; j < checkboxGroup.length; j++){
-				if (checkboxGroup[j].checked == true){
+			for (var j = 0; j < checkboxGroup.length; j++) {
+				if (checkboxGroup[j].checked == true) {
 					checkedArr.push(checkboxGroup[j].value);
 				}
 			}
-			if (checkedArr.length > 0){
+			if (checkedArr.length > 0) {
 				parameters[currentInput.name] = checkedArr;
 			}
-		}
-		else if (currentInput.type == "radio"){
-			if (currentInput.checked && currentInput.value){
+		} else if (currentInput.type == "radio") {
+			if (currentInput.checked && currentInput.value) {
 				parameters[currentInput.name] = currentInput.value;
 			}
-		}
-		else{
-			if (currentInput.value){
+		} else {
+			if (currentInput.value) {
 				parameters[currentInput.name] = currentInput.value;
 			}
 		}
 	}
-    var shoppingCart = new Array();        //This is a shopping cart array that can be declared anywhere
-	pf.animal.search(parameters).then(function (response) { 
+	var shoppingCart = new Array(); //This is a shopping cart array that can be declared anywhere
+	pf.animal.search(parameters).then(function (response) {
 		document.getElementById("hidden").visibility = "visible";
 		var numAnimals = Object.keys(response.data.animals).length;
 		var animals = response.data.animals;
@@ -103,65 +99,83 @@ function search(){
 			currentSlot.innerHTML += `<td>${animals[i].breeds.primary}</td>`;
 			currentSlot.innerHTML += `<td>${animals[i].age}</td>`;
 			currentSlot.innerHTML += `<td>${animals[i].contact.address.city}, ${animals[i].contact.address.state}</td>`;
-        }
-        //This is just a sample way to add to the shopping cart.
-        for (var j = 0; j < animals.length; j++) {
-            addToShoppingCart(animals[j].id, shoppingCart);
-        }
-    });
-
-
-    
+		}
+		//This is just a sample way to add to the shopping cart.
+		for (var j = 0; j < animals.length; j++) {
+			addToShoppingCart(animals[j].id, shoppingCart);
+		}
+	});
+	// Collapse table
+	var button = document.getElementById("submitbtn")
+	var showbtn = document.getElementById("searchbtn")
+	var table = document.getElementById("search-table")
+	var row = document.getElementById("hidden")
+	button.style.display = "none"
+	showbtn.style.display = "inline-block"
+	table.style.display = "none"
+	row.style.display = "table-row"
 }
 
-function getBreeds(type){
+function showTable(){
+	var button = document.getElementById("submitbtn")
+	var showbtn = document.getElementById("searchbtn")
+	var table = document.getElementById("search-table")
+	var row = document.getElementById("hidden")
+	button.style.display = "inline-block"
+	showbtn.style.display = "none"
+	table.style.display = "table"
+	row.style.display = "none"
+}
+
+function getBreeds(type) {
 	breeds = "Potential breeds for " + type + ": ";
 	pf.animalData.breeds(type).then(resp => {
-    // Do something with resp.data.breeds
-		for (var i = 0; i < resp.data.breeds.length; i++){
-			breeds += (resp.data.breeds[i].name)
-			if (i == resp.data.breeds.length - 1){
-				breeds += " ";
-			}else{
-				breeds += ", "
+			// Do something with resp.data.breeds
+			for (var i = 0; i < resp.data.breeds.length; i++) {
+				breeds += (resp.data.breeds[i].name)
+				if (i == resp.data.breeds.length - 1) {
+					breeds += " ";
+				} else {
+					breeds += ", "
+				}
 			}
-		}
-	})
-	.catch(function (error) {
-		// Handle the error
-		breeds += "Error, none found";
-	});
-    setTimeout(() => { document.getElementById("tooltiptext").innerHTML = breeds; }, 2000);
+		})
+		.catch(function (error) {
+			// Handle the error
+			breeds += "Error, none found";
+		});
+	setTimeout(() => {
+		document.getElementById("tooltiptext").innerHTML = breeds;
+	}, 2000);
 }
 
 //This function adds a pets id to the shopping cart.
-function addToShoppingCart(petID, shoppingCart){
-    console.log(petID);
-    shoppingCart[shoppingCart.length] = petID;
+function addToShoppingCart(petID, shoppingCart) {
+	console.log(petID);
+	shoppingCart[shoppingCart.length] = petID;
 }
 
 function getTypeBySort(animalType) {
-	
+
 	var elem = document.getElementById("sorting");
 	var sortType = ""
 	if (elem.innerText == "Oldest") {
 		elem.innerText = "Newest";
 		sortType = "-recent"
-	}
-	else {
+	} else {
 		elem.innerText = "Oldest";
 		sortType = "recent"
 	}
-	
+
 	pf.animal.search({
 			type: animalType,
 			sort: sortType
 		})
-			.then(function (response) {
-		
+		.then(function (response) {
+
 			var numAnimals = Object.keys(response.data.animals).length;
 			var animals = response.data.animals;
-			
+
 			for (var i = 0; i < numAnimals; i++) {
 				var currentSlot = document.getElementById(i);
 				currentSlot.innerHTML = `<td><button id='pfbtn' onclick="showInfo(${animals[i].id}, ${i})">${animals[i].name}</button></td>`;
@@ -177,5 +191,5 @@ function getTypeBySort(animalType) {
 		.catch(function (error) {
 			// Handle the error
 		});
-		
+
 }
